@@ -1,18 +1,26 @@
+coinLimit = 1000
 
 def calcCurrCoins(carbonEmiss, milage):
 	# Calculate amount of coins based from stats
-
-	return int((10**6)/(carbonEmiss*milage))
+	res = (10**6)/(carbonEmiss*milage)
+	
+	if res > coinLimit:
+		return coinLimit
+	return res
 
 def calcPassiveRefCoins(carbonEmiss, milage):
 	# Calculate amount of coins from person you referred to
-	return int(0.25*((10**6)/(carbonEmiss*milage)))
+	res = int(0.25*((10**6)/(carbonEmiss*milage)))
+
+	if res > coinLimit:
+		return coinLimit/4
+	return res
 
 def calcReferalCoins():
 	# Amount of coins you would get from referring someone
 	
 	# Temporarily, it's an arbitrary value
-	return 5
+	return 20.0
 
 def getCostFromGas(stateGasCost, milesPerGallon):
 	
