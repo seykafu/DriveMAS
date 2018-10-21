@@ -8,7 +8,7 @@ def sequel(command):
     SQL database
     """
     connection = pymysql.connect(host='127.0.01',
-                                 user='braedyn'
+                                 user='braedyn',
                                  password='harvard2018',
                                  db='driveMAS')
 
