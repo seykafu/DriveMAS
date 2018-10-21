@@ -160,8 +160,9 @@
 
 
 	<br><br><br><br>
-	
-	<a href="./home"><button style="width:100%;" type="button" class="btn btn-primary" disabled>Update</button></a>
+	Pending milage:<br>
+	New Haven, CT 06520 to Cambridge, MA 02138
+	<a href="./home"><button style="width:100%;" type="button" class="btn btn-primary">Update</button></a>
 	<br>
 	<br>
         <!--
@@ -313,7 +314,7 @@
 
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-   <script>
+    <script>
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
         type: 'line',
@@ -321,7 +322,7 @@
           labels: ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks"],
           datasets: [{
             label: 'Total gas spent on a weekly basis',
-            data: [0, 0, 0, 0],
+            data: [110, 220, 365, 436],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#ff0000',
