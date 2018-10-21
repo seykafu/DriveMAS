@@ -6,7 +6,7 @@ sqlpy.selectCmd("SELECT * FROM account WHERE password='hackers'")
 
 '''
 
-def createAccount(username, password):
+def createAccount(username, password, carbon):
 	sqlCom = 'INSERT INTO account (username, password, coins, currCO2, currMilage) values (%s,%s,%s,%s,%s)'
 
 	cursor = sqlpy.connection.cursor()
@@ -31,6 +31,16 @@ def getCoinsById(idNum):
 	# We get coins based on ID
 	idNum = str(idNum)
 	return sqlpy.selectCmd("SELECT coins FROM account WHERE id="+idNum+";")[0]
+
+def updateCoinsById(idNum, coinValue):
+	sqlpy.sequel("UPDATE account SET coins="+coinValue+" WHERE id="+idNum+";")
+
+def updateMilageById(idNum, milage):
+	sqlpy.sequel("UPDATE account SET currMilage="+milage+" WHERE id="+idNum+";")
+
+
+def updateCO2ById(idNum, co2):
+	sqlpy.sequel("UPDATE account SET currCO2="+co2+" WHERE id="+idNum+";")
 
 def updateCoinsById(idNum, coinValue):
 	sqlpy.sequel("UPDATE account SET coins="+coinValue+" WHERE id="+idNum+";")
