@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import accountFunc
 import calculation
 
@@ -16,6 +16,8 @@ def home():
     carType = result[4]
     milage = result[5]
 
+    milage = 1000
+
     CO2OutputGas = 18.0
     CO2OutputElectric = 1.77
 
@@ -23,20 +25,24 @@ def home():
     totalCO2Electric = calculation.totalCarbonOutput(CO2OutputElectric,milage)
  
     stateFuelCost = accountFunc.getGasStatsByState('MA') 
-    gasCost = calculation.getCostFromGas(stateFuelCost[1], milesPerGallon)
+    gasCost = round(calculation.getCostFromGas(stateFuelCost[1], milesPerGallon),2)
 
-    electricCost = calculation.getCostfromElectric(stateFuelCost[2], milesPerGallon)
+    electricCost = round(calculation.getCostfromElectric(stateFuelCost[2], milesPerGallon),2)
     
 
     amountOfMoneySaved = gasCost - electricCost
    
 
-    coinsEarned = calculation.calcCurrCoins(CO2OutputGas, milage)
+    coinsEarned = round(calculation.calcCurrCoins(CO2OutputGas, milage),3)
  
     # **locals() allows us to pass all local variables
     return render_template('index.html', **locals())
 
-
+@app.route('/referal',methods=['GET'])
+def reroute():
+	refCode = request.args.get('code',None)
+	print refCode
+	return "<html>"+refCode+"</html>"
 
 if __name__ == '__main__':
     app.run(debug=True)
