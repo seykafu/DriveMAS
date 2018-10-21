@@ -5,6 +5,21 @@ import sqlPython as sqlpy
 sqlpy.selectCmd("SELECT * FROM account WHERE password='hackers'")
 
 '''
+
+def createReferal(referalID, refereeID):
+	sqlCom = 'INSERT INTO referal (id0, id2) values (%s,%s)'
+
+	cursor = sqlpy.connection.cursor()
+	try:
+		cursor.execute(sqlCom, (username,password,0.0,carType,milage))
+	except:
+		print 'There was a problem creating an account in database'
+		return -1
+	cursor.fetchone()
+	sqlpy.connection.commit()
+	return 0
+
+
 def createAccount(username, password, carType,milage):
 
 	sqlCom = 'INSERT INTO account (username, password, coins, carType, currMilage) values (%s,%s,%s,%s,%s)'
@@ -24,6 +39,14 @@ def getAccountInfoFromID(idNum):
 	# If id does not exist, this returns None
 	idNum = str(idNum)
 	res = sqlpy.selectCmd("SELECT * FROM account WHERE id="+idNum+";")
+
+	return res
+
+
+def getAccountInfoFromUsername(username):
+	# We find an account based on the user id
+	# If id does not exist, this returns None
+	res = sqlpy.selectCmd("SELECT * FROM account WHERE username='"+username+"';")
 
 	return res
 

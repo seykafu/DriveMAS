@@ -42,6 +42,14 @@ def getAccountInfoFromID(idNum):
 
 	return res
 
+
+def getAccountInfoFromUsername(username):
+	# We find an account based on the user id
+	# If id does not exist, this returns None
+	res = sqlpy.selectCmd("SELECT * FROM account WHERE username='"+username+"';")
+
+	return res
+
 def getCoinsById(idNum):
 	# We get coins based on ID
 	idNum = str(idNum)

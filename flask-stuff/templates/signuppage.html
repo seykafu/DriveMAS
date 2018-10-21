@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='signuppage.css')}}">
 </head>
 <div class="login-page">
-  <div class="form">
+  <form class="form" action="/register" method="POST">
     <form class="login-form">
-      <input type="text" placeholder="Input Referral Code Here"/>
-      <input type="text" placeholder="Username"/>
-      <input type="password" placeholder="password"/>
-      <input type="email" placeholder="Email"/>
-      <button>Apply Code </button>
+      <input type="text" name="code" placeholder="Input Referral Code Here"/>
+      <input type="text" name="username" placeholder="Username"/>
+      <input type="password" name="password" placeholder="password"/>
+      <input type="email" name="email" placeholder="Email"/>
+      <input type="submit" value="Apply Code"/>
       <p class="message">No Code? Ask to be Referred!<a href="testindex.html"> Go Back to Homepage</a></p>
     </form>
   </div>
