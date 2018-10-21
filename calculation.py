@@ -1,9 +1,6 @@
 import sqlPython as sqlpy
 coinLimit = 1000
 
-def updateCurrCoinsById(idNum):
-	# Update current coin amount based on id
-
 
 def calcCurrCoins(carbonEmiss, milage):
 	# Calculate amount of coins based from stats
@@ -12,6 +9,9 @@ def calcCurrCoins(carbonEmiss, milage):
 	if res > coinLimit:
 		return coinLimit
 	return res
+
+def totalCarbonOutput(carbonEmiss,milage):
+	return carbonEmiss*milage
 
 def calcPassiveRefCoins(carbonEmiss, milage):
 	# Calculate amount of coins from person you referred to
