@@ -5,14 +5,13 @@ import sqlPython as sqlpy
 sqlpy.selectCmd("SELECT * FROM account WHERE password='hackers'")
 
 '''
-res = getAccountInfoFromID(1)
-def createAccount(username, password, carType,res[5]):
+def createAccount(username, password, carType,milage):
 
 	sqlCom = 'INSERT INTO account (username, password, coins, carType, currMilage) values (%s,%s,%s,%s,%s)'
 
 	cursor = sqlpy.connection.cursor()
 	try:
-		cursor.execute(sqlCom, (username,password,0.0,carType,res[5]))
+		cursor.execute(sqlCom, (username,password,0.0,carType,milage))
 	except:
 		print 'There was a problem creating an account in database'
 		return -1
