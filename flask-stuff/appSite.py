@@ -87,7 +87,7 @@ def regsiter():
     	#coinsEarned = round(calculation.calcCurrCoins(CO2OutputGas, milage),3)
  	coinsEarned = 0.0
     	# **locals() allows us to pass all local variables
-    	return render_template('index.html', **locals())
+    	return render_template('home.html', **locals())
 
 
 
@@ -123,7 +123,7 @@ def homeTravel(usingId=1):
     coinsEarned = round(calculation.calcCurrCoins(CO2OutputGas, milage),3)
  
     # **locals() allows us to pass all local variables
-    return render_template('home.html', **locals())
+    return render_template('travel.html', **locals())
 
 @app.route('/signup',methods=['GET'])
 def signinroute():
