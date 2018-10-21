@@ -89,6 +89,42 @@ def regsiter():
     	# **locals() allows us to pass all local variables
     	return render_template('index.html', **locals())
 
+
+
+@app.route('/home')
+def homeTravel(usingId=1):
+    milesPerGallon = 44 
+
+    result = accountFunc.getAccountInfoFromID(usingId)
+
+    userId = result[0]
+    username = result[1]
+    coinsTotal = result[3]
+    carType = result[4]
+    milage = result[5]
+
+    milage = 1135
+
+    CO2OutputGas = 18.0
+    CO2OutputElectric = 1.77
+
+    totalCO2 = calculation.totalCarbonOutput(CO2OutputGas,milage) 
+    totalCO2Electric = calculation.totalCarbonOutput(CO2OutputElectric,milage)
+ 
+    stateFuelCost = accountFunc.getGasStatsByState('MA') 
+    gasCost = round(calculation.getCostFromGas(stateFuelCost[1], milesPerGallon),2)
+
+    electricCost = round(calculation.getCostfromElectric(stateFuelCost[2], milesPerGallon),2)
+    
+
+    amountOfMoneySaved = gasCost - electricCost
+   
+
+    coinsEarned = round(calculation.calcCurrCoins(CO2OutputGas, milage),3)
+ 
+    # **locals() allows us to pass all local variables
+    return render_template('home.html', **locals())
+
 @app.route('/signup',methods=['GET'])
 def signinroute():
 	return render_template('signuppage.html')
