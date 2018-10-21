@@ -26,9 +26,8 @@ def selectCmd(command):
 
 def createAccountTable():
 	try:
-		sequel('CREATE TABLE account (id SERIAL, username varchar(50), password varchar(50), coins float, currCO2 float, currMilage float);')
+		sequel('CREATE TABLE account (id SERIAL, username varchar(50), password varchar(50), coins float, carType varchar(50), currMilage float);')
 	except (RuntimeError):
 		print 'Failure to create account table'
-
 
 

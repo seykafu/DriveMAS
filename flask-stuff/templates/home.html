@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Drive Mas</title>
+    <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,19 +18,13 @@
 
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-<<<<<<< HEAD:flask-stuff/templates/testIndex.html
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Welcome to Drive Mas.</a>
-=======
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Driving MAS</a>
->>>>>>> dc02d29d7150655761867a8397a2278e7ffc1d2d:flask-stuff/templates/index.html
      <!--
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
      -->
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\signinpage.html">Sign out</a>
-
-
+          <a class="nav-link" href="#">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -41,49 +35,95 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\signinpage.html">
+                <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
-                  Sign In
+                  Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
-
               <li class="nav-item">
-                <a class="nav-link" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\signuppage.html">
+                <a class="nav-link" href="#">
                   <span data-feather="file"></span>
-                  Sign Up
+                  Orders
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\referralpage.html">
+                <a class="nav-link" href="#">
                   <span data-feather="shopping-cart"></span>
-                  Referral Program
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Customers
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Integrations
                 </a>
               </li>
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
             </h6>
-
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">A platform overviewing why drivers who ride
-on gas should switch to electric vehicles (EV). We host databases on the cloud and present them to users on this platform. </h1>
+            <h1 class="h2">Dashboard</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
               </div>
-
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
             </div>
           </div>
 
           <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-<<<<<<< HEAD:flask-stuff/templates/testIndex.html
-          <h2>What Positive Impact does it Bring?</h2>
-=======
 	<h1>Welcome, {{ username }}</h1>
 
 	Money spent on gas:
@@ -120,14 +160,12 @@ on gas should switch to electric vehicles (EV). We host databases on the cloud a
 
 
 	<br><br><br><br>
-	Pending milage:<br>
-	New Haven, CT 06520 to Cambridge, MA 02138
-	<a href="./home"><button style="width:100%;" type="button" class="btn btn-primary">Update</button></a>
+	
+	<a href="./home"><button style="width:100%;" type="button" class="btn btn-primary" disabled>Update</button></a>
 	<br>
 	<br>
         <!--
           <h2>Section title</h2>
->>>>>>> dc02d29d7150655761867a8397a2278e7ffc1d2d:flask-stuff/templates/index.html
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -280,14 +318,14 @@ on gas should switch to electric vehicles (EV). We host databases on the cloud a
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks"],
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           datasets: [{
-            data: [125, 250, 375, 500],
+            data: [0, 0, 0, 0, 0, 0, 0],
             lineTension: 0,
             backgroundColor: 'transparent',
-            borderColor: '#ff0000',
+            borderColor: '#007bff',
             borderWidth: 4,
-            pointBackgroundColor: '#ff0000'
+            pointBackgroundColor: '#007bff'
           }]
         },
         options: {

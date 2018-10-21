@@ -18,11 +18,7 @@
 
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-<<<<<<< HEAD:flask-stuff/templates/testIndex.html
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Welcome to Drive Mas.</a>
-=======
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Driving MAS</a>
->>>>>>> dc02d29d7150655761867a8397a2278e7ffc1d2d:flask-stuff/templates/index.html
      <!--
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
      -->
@@ -40,19 +36,7 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\signinpage.html">
-                  <span data-feather="home"></span>
-                  Sign In
-                </a>
-              </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\signuppage.html">
-                  <span data-feather="file"></span>
-                  Sign Up
-                </a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="C:\Kasey\Harvard\git\HackHarvard-2018\flask-stuff\templates\referralpage.html">
                   <span data-feather="shopping-cart"></span>
@@ -81,53 +65,7 @@ on gas should switch to electric vehicles (EV). We host databases on the cloud a
 
           <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-<<<<<<< HEAD:flask-stuff/templates/testIndex.html
           <h2>What Positive Impact does it Bring?</h2>
-=======
-	<h1>Welcome, {{ username }}</h1>
-
-	Money spent on gas:
-	${{ gasCost }}
-	<br>	
-
-	Amount of CO2 released into the atmosphere:
-	{{ totalCO2 }}	
-	<br>
-
-        Cost of an electric vehicle based on current milage: 
-	${{ electricCost }}
-	<br>
- 	
-	How much saved if we switch to an electric vehicle:
-	${{ amountOfMoneySaved }}
-	<br>	
-
-	Total amount of coins earned:
-	{{ coinsEarned }} 
-	<br>	
-	Total amount of coins:
-	{{ coinsTotal }}
-
-
-	<br><br>
-	Referal Code: <br>
-	http://localhost:5000/referal?code={{ userId}}
-	<br><br>
-
-	http://harvarddrive.com/referal?code={{ userId}}
-
-
-
-
-	<br><br><br><br>
-	Pending milage:<br>
-	New Haven, CT 06520 to Cambridge, MA 02138
-	<a href="./home"><button style="width:100%;" type="button" class="btn btn-primary">Update</button></a>
-	<br>
-	<br>
-        <!--
-          <h2>Section title</h2>
->>>>>>> dc02d29d7150655761867a8397a2278e7ffc1d2d:flask-stuff/templates/index.html
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -258,7 +196,7 @@ on gas should switch to electric vehicles (EV). We host databases on the cloud a
         </main>
       </div>
     </div>
-    -->
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -280,14 +218,14 @@ on gas should switch to electric vehicles (EV). We host databases on the cloud a
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks"],
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           datasets: [{
-            data: [125, 250, 375, 500],
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
             lineTension: 0,
             backgroundColor: 'transparent',
-            borderColor: '#ff0000',
+            borderColor: '#007bff',
             borderWidth: 4,
-            pointBackgroundColor: '#ff0000'
+            pointBackgroundColor: '#007bff'
           }]
         },
         options: {
