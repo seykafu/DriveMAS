@@ -13,4 +13,4 @@ def sequel(command):
                                  db='driveMAS')
 
     cursor = connection.cursor()
-    return cursor('command')
+    return cursor.execute('command')
