@@ -13,4 +13,7 @@ def sequel(command):
                                  db='driveMAS')
 
     cursor = connection.cursor()
-    return cursor.execute('command')
+    return cursor.execute(command)
+
+sequel('CREATE TABLE account (id SERIAL, username varchar(50), password(50), coins float, currCO2 float, currMilage float)')
+
