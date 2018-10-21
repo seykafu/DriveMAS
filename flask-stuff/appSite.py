@@ -42,7 +42,12 @@ def home():
 def reroute():
 	refCode = request.args.get('code',None)
 	print refCode
-	return "<html> Your referal code is: "+refCode+"</html>"
+    	return render_template('referralpage.html', code = refCode)
+
+
+@app.route('/signup',methods=['GET'])
+def signinroute():
+	return render_template('signuppage.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
