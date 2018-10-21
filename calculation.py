@@ -4,6 +4,8 @@ coinLimit = 1000
 
 def calcCurrCoins(carbonEmiss, milage):
 	# Calculate amount of coins based from stats
+	milage = max(milage, 0.0001)
+
 	res = (10**6)/(carbonEmiss*milage)
 	
 	if res > coinLimit:
@@ -15,6 +17,8 @@ def totalCarbonOutput(carbonEmiss,milage):
 
 def calcPassiveRefCoins(carbonEmiss, milage):
 	# Calculate amount of coins from person you referred to
+	milage = max(milage, 0.0001)
+
 	res = int(0.25*((10**6)/(carbonEmiss*milage)))
 
 	if res > coinLimit:

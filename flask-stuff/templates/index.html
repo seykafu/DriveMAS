@@ -125,16 +125,32 @@
           <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
 	Money spent on gas:
+	${{ gasCost }}
 	<br>	
 
 	Amount of CO2 released into the atmosphere:
-	{{ CO2Output }}	
-	<br>	
-	How much saved if we switch to EV:
+	{{ totalCO2 }}	
+	<br>
+
+        Cost of an electric vehicle based on current milage: 
+	${{ electricCost }}
+	<br>
+ 	
+	How much saved if we switch to an electric vehicle:
+	${{ amountOfMoneySaved }}
 	<br>	
 
-	Total amount of coins earned: 
+	Total amount of coins earned:
+	{{ coinsEarned }} 
 	<br>	
+	Total amount of coins:
+	{{ coinsTotal }}
+
+
+	<br><br>
+	Referal Code: <br>
+	{{ userId}}
+
 
 
 
