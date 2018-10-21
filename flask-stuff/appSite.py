@@ -42,7 +42,7 @@ def home():
 def reroute():
 	refCode = request.args.get('code',None)
 	print refCode
-	return "<html>"+refCode+"</html>"
+	return "<html> Your referal code is: "+refCode+"</html>"
 
 if __name__ == '__main__':
     app.run(debug=True)
