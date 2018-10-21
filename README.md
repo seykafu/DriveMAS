@@ -1,5 +1,8 @@
 # HackHarvard-2018
-35.238.205.154
+localhost = '35.238.205.154'
+username = 'root'
+password = 'harvard2018'
+database = 'driveMAS'
 
 COMMAND LINE to set up proxy:
 
