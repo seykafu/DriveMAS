@@ -1,5 +1,11 @@
 import sqlPython as sqlpy
 
+# Syntax
+'''
+sqlpy.selectCmd("SELECT * FROM account WHERE password='hackers'")
+
+'''
+
 def createAccount(username, password):
 	sqlCom = 'INSERT INTO account (username, password, coins, currCO2, currMilage) values (%s,%s,%s,%s,%s)'
 
@@ -13,6 +19,21 @@ def createAccount(username, password):
 	sqlpy.connection.commit()
 	return 0
 
+#createAccount('Dr. Evil', 'hackers')
 
-createAccount('Dr. Evil', 'hackers')
-sqlpy.selectCmd("SELECT * FROM account WHERE password='hackers'")
+def getAccountInfoFromID(idNum):
+	# We find an account based on the user id
+	# If id does not exist, this returns None
+	idNum = str(idNum)
+	res = sqlpy.selectCmd("SELECT * FROM account WHERE id="+idNum+";")
+
+	return res
+
+def getCoinsById(idNum):
+	# We get coins based on ID
+	idNum = str(idNum)
+	return sqlpy.selectCmd("SELECT coins FROM account WHERE id="+idNum+";")[0]
+
+
+#print getCoinsById(1)
+print getAccountInfoFromID(1)

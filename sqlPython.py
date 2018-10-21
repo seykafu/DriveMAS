@@ -24,5 +24,13 @@ def selectCmd(command):
     cursor = connection.cursor()
     cursor.execute(command)
     res =  cursor.fetchone()
-    print res
     return res
+
+def createAccountTable():
+	try:
+		sequel('CREATE TABLE account (id SERIAL, username varchar(50), password varchar(50), coins float, currCO2 float, currMilage float);')
+	except (RuntimeError):
+		print 'Failure to create account table'
+
+
+
