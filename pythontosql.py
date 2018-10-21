@@ -7,7 +7,7 @@ def sequel(command):
     This command takes a sequel command and uses python to connect with our
     SQL database
     """
-    connection = pymysql.connect(host='127.0.01',
+    connection = pymysql.connect(host='127.0.0.1',
                                  user='braedyn',
                                  password='harvard2018',
                                  db='driveMAS')
