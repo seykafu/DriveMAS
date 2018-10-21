@@ -1,5 +1,6 @@
 coinLimit = 1000
 
+
 def calcCurrCoins(carbonEmiss, milage):
 	# Calculate amount of coins based from stats
 	res = (10**6)/(carbonEmiss*milage)
