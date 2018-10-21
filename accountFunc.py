@@ -40,10 +40,14 @@ def updateMilageById(idNum, milage):
 
 
 def updateCO2ById(idNum, co2):
+	# Theoreticly, you should not have to use this function unless you are switching from GV to EV and vice versa
 	sqlpy.sequel("UPDATE account SET currCO2="+co2+" WHERE id="+idNum+";")
 
 def updateCoinsById(idNum, coinValue):
 	sqlpy.sequel("UPDATE account SET coins="+coinValue+" WHERE id="+idNum+";")
 
+def getGasStatsByState(state):
+	res = sqlpy.selectCmd("SELECT * FROM costs WHERE state='"+state+"';")
 
+	return res
 
