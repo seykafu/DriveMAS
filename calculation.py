@@ -1,4 +1,8 @@
+import sqlPython as sqlpy
 coinLimit = 1000
+
+def updateCurrCoinsById(idNum):
+	# Update current coin amount based on id
 
 
 def calcCurrCoins(carbonEmiss, milage):

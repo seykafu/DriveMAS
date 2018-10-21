@@ -1,8 +1,6 @@
 #Activate proxy first
 import pymysql
 
-
-
 connection = pymysql.connect(host='35.238.205.154',user='braedyn',password='harvard2018',db='driveMAS')
 
 

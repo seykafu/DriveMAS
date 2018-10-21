@@ -19,8 +19,6 @@ def createAccount(username, password):
 	sqlpy.connection.commit()
 	return 0
 
-#createAccount('Dr. Evil', 'hackers')
-
 def getAccountInfoFromID(idNum):
 	# We find an account based on the user id
 	# If id does not exist, this returns None
@@ -34,6 +32,8 @@ def getCoinsById(idNum):
 	idNum = str(idNum)
 	return sqlpy.selectCmd("SELECT coins FROM account WHERE id="+idNum+";")[0]
 
+def updateCoinsById(idNum, coinValue):
+	sqlpy.sequel("UPDATE account SET coins="+coinValue+" WHERE id="+idNum+";")
 
-#print getCoinsById(1)
-print getAccountInfoFromID(1)
+
+
